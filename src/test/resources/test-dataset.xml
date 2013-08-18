@@ -20,4 +20,6 @@
 <LAWYER ID="18" NAME="Rae Marnded" UUID="Rae Marnded" BOSS_ID="6" SPECIALTY="Criminal defence"  />
 <LAWYER ID="19" NAME="Sue Swillingly" UUID="Sue Swillingly" BOSS_ID="1" SPECIALTY="Legal action as a means to influence policy" />
 <LAWYER ID="20" NAME="Tom Sawyer" UUID="Tom Sawyer" BOSS_ID="6" SPECIALTY="Pro bono work in London" />
+<SECRET />
+<SECRET_LAWYER />
 </dataset>

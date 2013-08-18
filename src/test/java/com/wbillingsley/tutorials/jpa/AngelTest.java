@@ -137,6 +137,25 @@ public class AngelTest {
     	 */
     	Long leakerId = null;
     	
+		Map<Lawyer, Integer> knownCount = new HashMap<Lawyer, Integer>();
+		for (String message : checkKnownBy.keySet()) {
+			for (Lawyer l : checkKnownBy.get(message)) {
+				if (knownCount.containsKey(l)) {
+					knownCount.put(l, knownCount.get(l) + 1);
+				} else {
+					knownCount.put(l, 1);
+				}
+			}
+		}
+		
+		int max = 0;
+		for (Lawyer l : knownCount.keySet()) {
+			if (knownCount.get(l) > max) {
+				max = knownCount.get(l);
+				leakerId = l.id;
+			}
+		}
+    	
     	
     	/*
     	 * Then we quietly send our agents in to convert the leaker into an asset.

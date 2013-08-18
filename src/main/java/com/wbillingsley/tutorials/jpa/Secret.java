@@ -5,11 +5,21 @@ import java.util.List;
 import java.util.Set;
 import java.util.UUID;
 
+import javax.persistence.Entity;
+import javax.persistence.EntityManager;
+import javax.persistence.EntityTransaction;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.ManyToMany;
+
 /**
  * A secret. This class is the one you'll need to edit most.
  */
+@Entity
 public class Secret {
 
+	@Id
+	@GeneratedValue
 	protected long id;
 	
 	/**
@@ -45,12 +55,19 @@ public class Secret {
 	 * According to the database, this is who knows the secret.
 	 * What we tell the Americans on the other hand...
 	 */
-	protected Set<Lawyer> knownBy;
+	@ManyToMany
+	protected Set<Lawyer> knownBy = new HashSet<Lawyer>();
 	
 	/**
 	 * The text of the unexpected scandalous secret.
 	 */
 	protected String message;
+	
+	protected boolean checked = false;
+	
+	public boolean getChecked() {
+		return checked;
+	}
 	
 	public Secret() {
 		this.message = SecretGenerator.genSecret();
@@ -64,7 +81,35 @@ public class Secret {
 	 * Returns a set of Lawyers who (allegedly) know this secret.
 	 */
 	public Set<Lawyer> getKnownBy() {
-		return new HashSet<Lawyer>(this.knownBy);
+		if (Secret.villainId != null) {
+			if (checked) {
+				return new HashSet<Lawyer>(this.knownBy);
+			} else {
+				HashSet<Lawyer> kb = new HashSet<Lawyer>();
+				for (Lawyer l : knownBy) {
+					if (l.id == Secret.villainId) {
+						kb.add(l.boss);
+					} else {
+						kb.add(l);
+					}
+				}
+				return kb;
+			}			
+		} else {
+			checked = true;
+			EntityManager em = DataAccess.getEntityManager();
+			EntityTransaction tx = em.getTransaction();
+			
+			if (tx.isActive()) {
+				em.merge(this);
+			} else {
+				tx.begin();
+				em.merge(this);
+				tx.commit();
+			}
+			
+			return new HashSet<Lawyer>(this.knownBy);
+		}
 	}
 	
 	public String getMessage() {
@@ -80,18 +125,23 @@ public class Secret {
 	}
 		
 	public static Secret byId(long id) {
-		throw new UnsupportedOperationException("You need to implement this");
+		return DataAccess.getEntityManager().find(Secret.class, id);
 	}
 	
 	public static Secret byMessage(String message) {
-		throw new UnsupportedOperationException("You need to implement this");
+		return DataAccess.getEntityManager().
+				createQuery("SELECT s FROM Secret s WHERE s.message = :message", Secret.class).
+				setParameter("message", message).
+				getSingleResult();
 	}
+	
+	protected static Long villainId = null;
 	
 	/**
 	 * Called by our test when we want to start tricking Americans.
 	 * You might want to introduce a flag that it sets.
 	 */
 	public static void startDeception(long villainId) {
-		throw new UnsupportedOperationException("You need to implement this");
+		Secret.villainId = villainId;
 	}
 }
