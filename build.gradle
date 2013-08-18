@@ -1,0 +1,65 @@
+  apply plugin: 'java'
+  apply plugin: 'eclipse'
+
+  sourceCompatibility = 1.6
+  targetCompatibility = 1.6
+  
+  group = 'com.wbillingsley.tutorials'
+  artifact = 'angel-jpa'
+  version = '0.1'
+  
+
+  repositories {
+    maven {
+      url 'http://deco2800.uqcloud.net/artifactory/everything'
+    }
+    ivy {
+      url 'http://deco2800.uqcloud.net/artifactory/everything'
+    }
+    maven {
+      url 'https://bitbucket.org/wbillingsley/mavenrepo/raw/master/snapshots/'
+    }
+    maven {
+      url 'https://repository.jboss.org/nexus/content/repositories/releases'
+    }
+  }
+
+  dependencies {
+    testCompile group: "junit", name: "junit", version: "4.11"
+    testCompile group: "org.mockito", name: "mockito-all", version: "1.9.5"
+    
+    compile group: "org.hibernate", name: "hibernate-core", version: "4.2.4.Final"
+    compile group: "org.hibernate", name: "hibernate-entitymanager", version: "4.2.4.Final"
+    compile group: "com.wbillingsley", name: "salt-encrypt_2.10", version: "0.1-SNAPSHOT"
+    compile group: "org.apache.derby", name: "derby", version: "10.10.1.1"
+
+    testCompile group: "org.slf4j", name: "slf4j-api", version: "1.7.5"
+    testCompile group: "org.slf4j", name: "slf4j-simple", version: "1.7.5"
+
+    testCompile group: "org.dbunit", name: "dbunit", version: "2.4.9"
+    
+  }
+
+  jar {
+    manifest.attributes provider: 'gradle'
+  }
+
+  apply plugin: 'maven'
+
+  task javadocJar(type: Jar, dependsOn:javadoc) {
+     classifier = 'javadoc'
+     from javadoc.destinationDir
+  }
+ 
+  // add javadoc/source jar tasks as artifacts
+  artifacts {
+     archives javadocJar
+  }
+
+  uploadArchives {
+    repositories {
+        mavenDeployer {
+            repository(url: "file:///Users/wbillingsley/tmp/myRepo/")
+        }
+    }
+  }
