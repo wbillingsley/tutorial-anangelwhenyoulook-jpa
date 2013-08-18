@@ -1,23 +1,23 @@
 <?xml version='1.0' ?>
 <dataset>
-<LAWYER ID="1" NAME="Amos Tsu" SPECIALTY="Legal action as a means to influence policy" />
-<LAWYER ID="2" NAME="Barry Tree" BOSS_ID="1" SPECIALTY="Legal action as a means to influence policy" />
-<LAWYER ID="3" NAME="Carla Brief" SPECIALTY="Criminal defence" />
-<LAWYER ID="4" NAME="Dr Ann Cook" SPECIALTY="Embezzlement and corporate fraud" />
-<LAWYER ID="5" NAME="Eve-Anne Thurscor" BOSS_ID="4" SPECIALTY="Embezzlement and corporate fraud" />
-<LAWYER ID="6" NAME="Frank Lee Ease-Tuft" BOSS_ID="3" SPECIALTY="Criminal defence" />
-<LAWYER ID="7" NAME="Gemma Vercaise" SPECIALTY="High value patent lawsuits"  />
-<LAWYER ID="8" NAME="Hayden Plainsight" BOSS_ID="6" SPECIALTY="Protection of trade secrets and know-how" />
-<LAWYER ID="9" NAME="Ivor Wiggon" SPECIALTY="Barrister" />
-<LAWYER ID="10" NAME="Jimmy Riddle" BOSS_ID="5" SPECIALTY="Embezzlement and corporate fraud. Special interest in the sanitation industry." />
-<LAWYER ID="11" NAME="Jules Natcher" BOSS_ID="6" SPECIALTY="Criminal defence. Special interest in high value burglaries."/>
-<LAWYER ID="12" NAME="Lars Sunny" BOSS_ID="5" SPECIALTY="Embezzlement and corporate fraud" />
-<LAWYER ID="13" NAME="Madge Estes-Plejeur" BOSS_ID="6" SPECIALTY="Criminal defence"  />
-<LAWYER ID="14" NAME="Nick Visitor" SPECIALTY="Criminal appeals" />
-<LAWYER ID="15" NAME="Ollie Oxenfree" BOSS_ID="14" SPECIALTY="Criminal appeals" />
-<LAWYER ID="16" NAME="Patterson Pokey" BOSS_ID="1" SPECIALTY="Private prosecutions" />
-<LAWYER ID="17" NAME="Queenie Counsell" BOSS_ID="9" SPECIALTY="Barrister" />
-<LAWYER ID="18" NAME="Rae Marnded" BOSS_ID="6" SPECIALTY="Criminal defence"  />
-<LAWYER ID="19" NAME="Sue Swillingly" BOSS_ID="1" SPECIALTY="Legal action as a means to influence policy" />
-<LAWYER ID="20" NAME="Tom Sawyer" BOSS_ID="6" SPECIALTY="Pro bono work in London" />
+<LAWYER ID="1" NAME="Amos Tsu" UUID="Amos Tsu" SPECIALTY="Legal action as a means to influence policy" />
+<LAWYER ID="2" NAME="Barry Tree" UUID="Barry Tree" BOSS_ID="1" SPECIALTY="Legal action as a means to influence policy" />
+<LAWYER ID="3" NAME="Carla Brief" UUID="Carla Brief" SPECIALTY="Criminal defence" />
+<LAWYER ID="4" NAME="Dr Ann Cook" UUID="Dr Ann Cook" SPECIALTY="Embezzlement and corporate fraud" />
+<LAWYER ID="5" NAME="Eve-Anne Thurscor" UUID="Eve-Anne Thurscor" BOSS_ID="4" SPECIALTY="Embezzlement and corporate fraud" />
+<LAWYER ID="6" NAME="Frank Lee Ease-Tuft" UUID="Frank Lee Ease-Tuft" BOSS_ID="3" SPECIALTY="Criminal defence" />
+<LAWYER ID="7" NAME="Gemma Vercaise" UUID="Gemma Vercaise" SPECIALTY="High value patent lawsuits"  />
+<LAWYER ID="8" NAME="Hayden Plainsight" UUID="Hayden Plainsight" BOSS_ID="6" SPECIALTY="Protection of trade secrets and know-how" />
+<LAWYER ID="9" NAME="Ivor Wiggon" UUID="Ivor Wiggon" SPECIALTY="Barrister" />
+<LAWYER ID="10" NAME="Jimmy Riddle" UUID="Jimmy Riddle" BOSS_ID="5" SPECIALTY="Embezzlement and corporate fraud. Special interest in the sanitation industry." />
+<LAWYER ID="11" NAME="Jules Natcher" UUID="Jules Natcher" BOSS_ID="6" SPECIALTY="Criminal defence. Special interest in high value burglaries."/>
+<LAWYER ID="12" NAME="Lars Sunny" UUID="Lars Sunny" BOSS_ID="5" SPECIALTY="Embezzlement and corporate fraud" />
+<LAWYER ID="13" NAME="Madge Estes-Plejeur" UUID="Madge Estes-Plejeur" BOSS_ID="6" SPECIALTY="Criminal defence"  />
+<LAWYER ID="14" NAME="Nick Visitor" UUID="Nick Visitor" SPECIALTY="Criminal appeals" />
+<LAWYER ID="15" NAME="Ollie Oxenfree" UUID="Ollie Oxenfree" BOSS_ID="14" SPECIALTY="Criminal appeals" />
+<LAWYER ID="16" NAME="Patterson Pokey" UUID="Patterson Pokey" BOSS_ID="1" SPECIALTY="Private prosecutions" />
+<LAWYER ID="17" NAME="Queenie Counsell" UUID="Queenie Counsell" BOSS_ID="9" SPECIALTY="Barrister" />
+<LAWYER ID="18" NAME="Rae Marnded" UUID="Rae Marnded" BOSS_ID="6" SPECIALTY="Criminal defence"  />
+<LAWYER ID="19" NAME="Sue Swillingly" UUID="Sue Swillingly" BOSS_ID="1" SPECIALTY="Legal action as a means to influence policy" />
+<LAWYER ID="20" NAME="Tom Sawyer" UUID="Tom Sawyer" BOSS_ID="6" SPECIALTY="Pro bono work in London" />
 </dataset>

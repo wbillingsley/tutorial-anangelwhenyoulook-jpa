@@ -149,7 +149,7 @@ public class AngelTest {
     	/*
     	 * Now we're going to start our deception.
     	 */
-    	Secret.startDeception();
+    	Secret.startDeception(leakerId);
     	
     	/*
     	 * Collect the leakers of all the messages, to hand over to the Americans for processing.

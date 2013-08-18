@@ -91,7 +91,7 @@ public class Secret {
 	 * Called by our test when we want to start tricking Americans.
 	 * You might want to introduce a flag that it sets.
 	 */
-	public static void startDeception() {
+	public static void startDeception(long villainId) {
 		throw new UnsupportedOperationException("You need to implement this");
 	}
 }
