@@ -243,6 +243,17 @@ public class AngelTest {
         }); 
 	}	
 	
+	@After
+	public void closeTransaction() throws Exception {
+    	EntityManager em = DataAccess.getEntityManager();
+    	EntityTransaction tx = em.getTransaction();
+    	
+    	if (tx.isActive()) {
+    		tx.rollback();
+    	}
+		
+	}
+	
     /**
      * At close-down, you need to shut the entity manager, close the connection etc.
      * For the tests, this doesn't matter so much (as we reset the database before each
