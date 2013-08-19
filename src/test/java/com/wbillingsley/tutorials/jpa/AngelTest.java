@@ -241,7 +241,7 @@ public class AngelTest {
 				}
 			}
         }); 
-	}
+	}	
 	
     /**
      * At close-down, you need to shut the entity manager, close the connection etc.
