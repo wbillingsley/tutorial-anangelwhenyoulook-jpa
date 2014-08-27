@@ -50,6 +50,15 @@ public class AngelTest {
     }
     
     
+    @Test 
+    public void seeJpaInAction() throws Exception {
+    	Lawyer l = Lawyer.byId(13);
+    	Lawyer boss = l.getBoss();
+    	String name = boss.getName();
+    	System.out.println(name);
+    	
+    }
+    
     /**
      * The first thing we need to do is start keeping track of who we tell secrets to.
      * It's not quite as straightforward as it seems -- when we tell anything to a lawyer
