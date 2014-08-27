@@ -3,6 +3,10 @@
 .settings
 .classpath
 
+# IntelliJ IDEA
+.idea
+*.iml
+
 *.class
 bin
 

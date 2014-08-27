@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.UUID;
 
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
@@ -50,7 +51,7 @@ public class Lawyer {
 	
 	protected String specialty;
 	
-	@ManyToOne(optional=true)
+	@ManyToOne(optional=true, fetch=FetchType.LAZY)
 	protected Lawyer boss;
 	
 	protected Lawyer() {
